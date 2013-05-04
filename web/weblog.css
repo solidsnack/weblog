@@ -1,0 +1,102 @@
+body {
+  background-color: #111111;
+  color: #bbbbbb;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+#logs {
+  position: fixed;
+  top: 4em;
+  left: 2em;
+  right: 1em;
+  bottom: 2em;
+}
+
+.entries {
+  font-family: monospace;
+  border-left: #222222 solid thin;
+  border-right: #222222 solid thin;
+}
+
+.entries th {
+  font-weight: normal;
+  padding: 0;
+}
+
+.entries td {
+  padding: 0 0.5em;
+  border-right: #444444 solid thin;
+}
+
+.entries tbody tr {
+  border-top: #222222 solid thin;
+  border-bottom: #222222 solid thin;
+}
+
+.entries tbody {
+  border-top: #444444 solid thin;
+  border-bottom: #444444 solid thin;
+}
+
+.entries {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.entries .rows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 1.25em;
+  overflow-x: scroll;
+}
+
+.entries table {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.entries tbody {
+  position: absolute;
+  overflow-y: scroll;
+  top: 1.25em;
+  bottom: 0;
+}
+
+.entries thead {
+  text-align: left;
+  position: absolute;
+  top: 0;
+}
+
+.entries footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+#logs thead input {
+  font-size: 100%;
+  width: 100%;
+  margin: 0;
+  border: none;
+  font-family: monospace;
+  background-color: #111111;
+  color: #bbbbbb;
+}
+
+p, ul, li {
+  margin: 0;
+  padding: 0;
+}

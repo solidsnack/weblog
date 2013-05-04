@@ -1,0 +1,7 @@
+name: weblog
+description: A sample WebUI application
+dependencies:
+  intl: any
+  js: any
+  browser: any
+  web_ui: any

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weblog</title>
+    <link rel="stylesheet" href="weblog.css">
+    <script src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" charset="utf8">
+      // For some reason, I have to use jQuery and not $ when testing in
+      // Firefox.
+      function w(_, e) { return jQuery(e).outerWidth() }
+      function widths() {
+        return jQuery("#logs .rows tbody tr:first td").map(w)
+      }
+      function logsTableStyling() {
+        var tbodyWidth = jQuery("#logs .rows tbody").outerWidth()
+        var tdWidths = widths()
+        jQuery("#logs .rows thead").width(tbodyWidth)
+        function setWidth(i) {
+          return tdWidths[i % tdWidths.length]
+        }
+        jQuery("#logs .rows thead tr th").width(setWidth)
+      }
+    </script>
+  </head>
+  <body>
+    <section id="logs">
+      <div class="entries">
+        <div class="rows">
+          <table>
+            <thead>
+              <tr>
+                <th>timestamp</th>
+                <th>host</th>
+                <th>tag</th>
+                <th>pri</th>
+                <th>message</th>
+              </tr>
+            </thead>
+            <tbody template iterate="log in logs.sublist(0,999)">
+              <tr template iterate="field in log"> <td>{{field}}</td> </tr>
+            </tbody>
+          </table>
+        </div>
+        <footer>
+          <p> <em>rows:</em> {{logs.length}} <em>at:</em> {{updated}} </p>
+        </footer>
+      </div>
+    </section>
+
+    <script type="application/dart" src="weblog.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
